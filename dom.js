@@ -20,6 +20,5 @@ function wrapSpans(textArray){
 }
 
 function injectToDOM(spannedText){
-  console.log(spannedText.toString())
   document.getElementById('game-text').innerHTML = spannedText;
 }
