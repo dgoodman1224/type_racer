@@ -2,17 +2,24 @@ window.addEventListener("load",initialize)
 
 function initialize() {
   listen()
-  console.log("Sup Homes")
+  i = 0
 }
 
 function listen() {
   var input = document.getElementById('input-field')
-  input.addEventListener(onkeypress, keyPressed)
-  console.log(input)
+  input.addEventListener('keypress', keyPressed)
 }
 
-function keyPressed() {
-  console.log("Key was pressed")
-}
+function keyPressed(event) {
+  var letter = document.getElementsByTagName('span')[i]
+  if (event.keyCode === letter.innerText.charCodeAt(0)) {
+    i += 1
+    console.log(true)
+  } else {
+    console.log(false)
+  }
+
+
+  }
 
 
