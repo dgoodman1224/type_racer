@@ -1,0 +1,74 @@
+require 'debugger'
+require 'sinatra/flash'
+
+enable :session
+
+before do
+
+  if session[:id]
+    @logged_in = true
+    @current_user = User.find(session[:id])
+  else
+    @logged_in = false
+    @current_user = nil
+  end
+end
+
+get '/' do
+  @logged_in = params[:logged_in]
+  @users = User.all if @logged_in
+  erb :index
+end
+
+#----------- SESSIONS -----------
+
+get '/sessions/new' do
+
+  if @logged_in == false
+    @login_error = flash[:errors]
+    erb :sign_in
+  else
+    redirect '/'
+  end
+end
+
+post '/sessions' do
+  @password = Digest::SHA256.hexdigest(params[:password])
+  if User.validate(params, @password)
+    redirect '/?logged_in=true'
+  else
+    flash[:errors] = "Your email or passsword was incorrect"
+    redirect '/sessions/new'
+  end
+
+end
+
+delete '/sessions/:id' do
+  current_user = nil
+  session[:id] = nil
+  @logged_in = false
+  redirect '/'
+end
+
+#----------- USERS -----------
+
+get '/users/new' do
+  if @logged_in == false
+    @errors = flash[:errors]
+    erb :sign_up
+  else
+    redirect '/sessions/new'
+  end
+end
+
+post '/users' do
+  @user = User.new(name: params[:name], email: params[:email], password_hash: params[:password])
+  if @user.save
+    session[:id] = @user.id
+    @current_user = User.find(session[:id])
+    redirect '/'
+  else
+    flash[:errors] = @user.errors.full_messages
+    redirect '/users/new'
+  end
+end
