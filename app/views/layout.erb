@@ -20,9 +20,8 @@
   <title></title>
 </head>
 <body>
-
   <nav>
-    <div class="brand"><a href="/">User Authentication</a>
+    <div class="brand"><a href="/">Hi <%= @current_user.name %>, what do you want to do?</a>
     </div>
     <ul>
       <% if @current_user %>
