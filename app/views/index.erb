@@ -1,16 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/application.css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="dom.js"></script>
+    <script type="text/javascript" src="application.js"></script>
+    <title>Be Mine Kate Mara</title>
+  </head>
+  <body>
+    <div class="container">
+      <br/>
+    <% if @users%>
+        <h2 id="game-text">I wanna chill with Kate Mara</h2>
+        <img id='kate' src = "kate-mara.jpg">
+      <br/>
+      <form id="input-field">
+        <input  type="text" name="user_input" placeholder="Type yo shit">
+      </form>
+    <% else %>
+      <h3>Please sign in or sign up!</h3>
+    <%end%>
+    <%= @email %>
 
-<div class="container">
-  <br/>
-<% if @users%>
-  <div id="game-text">i wannna chill with kate mara</div>
-  <br/>
-  <form id="input-field">
-    <input  type="text" name="user_input" placeholder="Type yo shit">
-  </form>
-<% else %>
-  <h3>Please sign in or sign up!</h3>
-<%end%>
-
-<%= @email %>
-
-</div>
+    </div>
+  </body>
+</html>
