@@ -1,9 +1,10 @@
+
 <!DOCTYPE HTML>
 <html>
   <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/application.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/application.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="dom.js"></script>
@@ -15,6 +16,7 @@
       <br/>
     <% if @users%>
     <div class="content">
+      <div class="interface">
         <h2 id="game-text">I wanna chill with Kate Mara</h2>
         <img id='kate' src = "kate-mara.jpg">
       </div>
@@ -26,7 +28,7 @@
       <h3>Please sign in or sign up!</h3>
     <%end%>
     <%= @email %>
-
     </div>
   </body>
 </html>
+

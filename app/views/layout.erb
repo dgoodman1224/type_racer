@@ -8,14 +8,23 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <script src="/js/dom.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
   <title></title>
 </head>
 <body>
   <nav>
+    <% if @current_user %>
     <div class="brand"><a href="/">Hi <%= @current_user.name %>, what do you want to do?</a>
     </div>
+    <% end %>
     <ul>
       <% if @current_user %>
         <li>

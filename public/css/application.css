@@ -100,3 +100,11 @@ body {
 #kate {
   opacity: 0.0;
 }
+
+.interface {
+  text-align: center;
+}
+
+.correct-letter {
+  color: green;
+}

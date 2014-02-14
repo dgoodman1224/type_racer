@@ -29,5 +29,4 @@ function adjustOpacity(){
   var lengthOfText = document.getElementsByTagName('span').length
   console.log(lengthOfText)
   kate.style.opacity = counter / lengthOfText;
-;
 }
