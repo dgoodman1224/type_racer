@@ -92,3 +92,11 @@ body {
 .brand {
   text-align: center;
 }
+
+.content {
+  text-align: center;
+}
+
+#kate {
+  opacity: 0.0;
+}
