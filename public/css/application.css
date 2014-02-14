@@ -93,6 +93,14 @@ body {
   text-align: center;
 }
 
+.content {
+  text-align: center;
+}
+
+#kate {
+  opacity: 0.0;
+}
+
 .interface {
   text-align: center;
 }
