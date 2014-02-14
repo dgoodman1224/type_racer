@@ -96,3 +96,7 @@ body {
 .interface {
   text-align: center;
 }
+
+.correct-letter {
+  color: green;
+}
