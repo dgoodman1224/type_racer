@@ -8,30 +8,35 @@ function initialize() {
 //Closure
 var Game = (function() {
   var correctCounter = 0
-
+  var incorrectCounter = 0
 
   return {
     listen: function () {
-      console.log("this is me outside event listener", this)
       var self = this
-      var input = document.getElementById('input-field')
-        console.log("this is me inside event listener", this)
-        input.addEventListener('keypress', self.keyPressed)
+      window.addEventListener('keypress', self.keyPressed)
     },
 
     keyPressed: function (event) {
       var total = document.getElementsByTagName('span').length
       console.log("This is the total ammount of letters    " + total)
       var letter = document.getElementsByTagName('span')[correctCounter]
-      if (event.keyCode === letter.innerText.charCodeAt(0)) {
-        correctCounter += 1
+
+
+      if (event.keyCode === letter.innerText.charCodeAt(0) && incorrectCounter === 0) {
+        var letter = document.getElementById('letter-' + correctCounter)
+        letter.className = 'correct-letter'
+        correctCounter++
         console.log(true)
         if (correctCounter === total) {
           window.location.href = "http://movies.netflix.com/WiMovie/House_of_Cards/70178217?trkid=13462050"
-
         }
+      } else if (event.keyCode === 48 && incorrectCounter !== 0){
+        incorrectCounter--
+        document.getElementById('show-counter').innerHTML = incorrectCounter
       } else {
-        console.log(false)
+        incorrectCounter++
+        document.getElementById('show-counter').innerHTML = incorrectCounter
+
       }
     }
   }
