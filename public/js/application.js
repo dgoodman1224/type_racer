@@ -17,9 +17,7 @@ var Game = (function() {
     },
 
     listen: function () {
-      var self = this
-      var input = document.getElementById('input-field')
-      window.addEventListener('keypress', self.keyPressed)
+      window.addEventListener('keypress', this.keyPressed)
     },
 
     keyPressed: function (event) {
@@ -28,13 +26,18 @@ var Game = (function() {
       if (event.keyCode === letter.innerText.charCodeAt(0)) {
         letter.className = 'correct-letter'
         correctCounter++
-        console.log(true)
         adjustOpacity()
-        if (correctCounter === total) {
-          window.location.href = "http://movies.netflix.com/WiMovie/House_of_Cards/70178217?trkid=13462050"
-        }
+      }
+      if (correctCounter === total) {
+        console.log("She doesn't actually want you.");
+        Game.wait (2000)
 
       }
-    }
-  }
-})()
+    },
+
+    wait: function(time) {
+      setTimeout( function() {
+        window.location.href = "http://movies.netflix.com/WiMovie/House_of_Cards/70178217?trkid=13462050"
+      }, time )
+
+    }}})()

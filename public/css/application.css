@@ -11,9 +11,7 @@
 }
 
 img {
-  width: 40%;
-  border-radius: 20em;
-}
+  }
 
 nav {
   width: 100%;
@@ -99,6 +97,9 @@ body {
 
 #kate {
   opacity: 0.0;
+  width: 40%;
+  border-radius: 20em;
+
 }
 
 .interface {
@@ -106,5 +107,20 @@ body {
 }
 
 .correct-letter {
-  color: green;
+  color: #E01649;
+}
+
+#bubble {
+position: absolute;
+font-size: 32px;
+width: 210px;
+height: 90px;
+padding: 0px;
+background: #FFFFFF;
+border-radius: 9px;
+border-radius: 9px;
+border-radius: 9px;
+margin-top: 210px;
+margin-left: 105px;
+opacity: 0.0;
 }

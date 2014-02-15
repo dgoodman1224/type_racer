@@ -16,14 +16,13 @@
       <br/>
     <% if @users%>
     <div class="content">
+      <div id='bubble'> <%= @current_user.name %>, of course!<3</div>
       <div class="interface">
-        <h2 id="game-text">I wanna chill with Kate Mara</h2>
+        <h2 id="game-text">Kate will you please be my valentine?</h2>
         <img id='kate' src = "kate-mara.jpg">
       </div>
       <br/>
-      <form id="input-field">
-        <input  type="text" name="user_input" placeholder="Type yo shit">
-      </form>
+      <img src="ad.png">
     <% else %>
       <h3>Please sign in or sign up!</h3>
     <%end%>
